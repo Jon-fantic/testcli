@@ -15,8 +15,9 @@ export default {
     HelloWorld
   },
   created(){
+    console.log(process.env.VUE_APP_SECRET)
     this.axios.get(testapi+"18862153135").then(res=>{
-      
+
     })
   }
 }

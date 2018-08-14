@@ -6,7 +6,9 @@ module.exports = {
   devServer: {
     port:8091
   },
-  baseUrl: "/",
+  baseUrl: process.env.NODE_ENV === 'production'
+  ? '/'
+  : '/',
   chainWebpack: (config)=>{
     
   },
@@ -18,7 +20,8 @@ module.exports = {
           'assets':resolve('src/assets'),
           'src':resolve('src'),
         }
-      }
+      },
+      performance:false//取消限制大小的warning    
     })
   }
 }
