@@ -23,5 +23,7 @@ module.exports = {
       },
       performance:false//取消限制大小的warning    
     })
-  }
+  },
+  productionSourceMap: process.env.NODE_ENV === 'production'?false:true,
+
 }
