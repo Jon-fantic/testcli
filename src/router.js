@@ -12,7 +12,8 @@ export default new Router({
       component: Home,
       meta:{
         title:"hehe",
-        needAuth:false
+        needAuth:false,
+        include:false
       }
     },
     {

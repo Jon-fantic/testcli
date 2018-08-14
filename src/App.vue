@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+    <keep-alive :include="defaultInclude">
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 
@@ -11,6 +13,11 @@ export default {
   mounted() {
     document.title = this.$route.meta.title
   },
+  computed:{
+    defaultInclude(){
+      return this.$route.meta && this.$route.meta.include?this.$route.meta.include:""
+    }
+  }
 }
 </script>
 
